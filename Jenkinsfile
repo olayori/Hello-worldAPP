@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven 3.8.1'
-    }
+    
     stages {
         stage('Checkout SCM') {
             steps {
@@ -10,6 +8,9 @@ pipeline {
             }
         }
         stage('Build Job') {
+            tools {
+                maven 'Maven 3.8.1'
+            }
             steps {
                 sh 'mvn -f pom.xml clean install package'
             }
