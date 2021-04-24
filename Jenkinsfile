@@ -32,7 +32,7 @@ ansible-playbook create-docker-image-container.yml;''', execTimeout: 120000, fla
 ansible-playbook push-simple-devops-image.yml;''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'webapp/target', sourceFiles: 'webapp/target/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
-        stage('Ansible deloy to K8s') {
+        stage('Ansible deploy to K8s') {
             steps {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'controller-ansible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''cd /root/ansible-k8s;
 ansible-playbook -i hosts kubernetes-owolade-deployment.yml;
