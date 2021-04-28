@@ -6,6 +6,7 @@
     <h2> Deploying on Tomcat Server on EC2, Docker host and Kubernetes </h2>
     <h2> Ladberg is glad to see you here </h2>
     Current time is: <%= new java.util.Date(); %>
-    <%out.print("This test t5 and your lucky number is", 2*5);%>
+    This is test t5 and your lucky number below
+    <%out.print(2*5);%>
   </body>
 </html>
